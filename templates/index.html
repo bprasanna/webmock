@@ -45,10 +45,16 @@ img{height:auto;border:0;}
 WebMock is a web based automated mock interview generator. Given a website url which contains questions and answers listed, this application extracts the questions and answers then prepares voice based mock interview.</p>
 <h3>Input</h3>
 <p>Enter the URL of a website which contains questions and answers:</p>
-<input type="text" style="width:100%"></input>
+<form action="/" method="post">
+<input type="text" style="width:100%" name="url"></input>
+<input type="submit" value="Submit">
+</form>
 <h3>Output</h3>
-<div id="qaout">Please enter the URL to see some output here.</div>
-
+{% if url %}
+    <div id="qaout">{{url}}</div>
+{% else %}
+    <div id="qaout">Please enter the URL to see some output here.</div>
+{% endif %}
 </div>
 </div>
 </div>
