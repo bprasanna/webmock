@@ -10,6 +10,7 @@ def mock():
 	    url = request.form['url']
 	    paurl = urlparse(url)
 	    if paurl.netloc != '':
+            # Web scriping code goes here
 	        return render_template('index.html',url=url)	
 	    else:
 	        return render_template('index.html',url='Invalid URL')	
